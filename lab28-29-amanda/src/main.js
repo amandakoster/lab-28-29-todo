@@ -1,6 +1,6 @@
 import './style/main.scss';
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDom from 'react-dom'; //rendering agent for a browser vs. a mobile app, etc.
 import {BrowserRouter, Route} from 'react-router-dom';
 import NoteForm from './component/note-form';
 import NoteItem from './component/note-item';
@@ -14,16 +14,20 @@ class App extends React.Component {
       notes: [],
     };
 
-    this.getApp = this.getApp.bind(this);
+    this.getApp = this.getApp.bind(this); //binds App to the constructor
   }
 
-  componentDidUpdate(){
-    console.log('::::STATE::::', this.state);
+  componentDidUpdate(){ //lifecyscle hook
+    console.log('::::STATE-CHANGE::::', this.state);
   }
 
+  //sending chinldren data to parent
   getApp(){
+    //retuns an object with state properties
     return{
+      //returns current state
       state: this.state,
+      //immutable overwrite proeprites of constructor state -always updates the App state
       setState: this.setState.bind(this),
     };
   }
@@ -34,7 +38,7 @@ class App extends React.Component {
         <div>
           <NoteItem app={this.getApp()}
           />
-          <NoteList notes={this.state.notes} />
+          <NoteList notes={this.state.notes} /> //passes NoteList props into the App render
           <div className="inputBox"> </div>
         </div>
       </main>
@@ -43,4 +47,3 @@ class App extends React.Component {
 }
 
 ReactDom.render(<App />, document.getElementById('root'));
-document.body.appendChild;

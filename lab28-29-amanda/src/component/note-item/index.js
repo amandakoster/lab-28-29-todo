@@ -12,16 +12,22 @@ class NoteItem extends React.Component {
   }
 
   noteCreate(note){
-    let {app} = this.props;
     note.id = uuid();
-    app.setState( prevState => ({
+    this.props.app.setState( prevState => ({
       notes: [...prevState.notes, note],
     }));
   }
+  //
+  // noteUpdate(note){
+  //   this.props.app.setState(prevState => ({
+  //     notes: prevState.notes.map((item) => {
+  //       return item.id !== note.id;
+  //     }),
+  //   }));
+  // }
 
   noteRemove(note){
-    let {app} = this.props;
-    app.setState(prevState => ({
+    this.props.app.setState(prevState => ({
       notes: prevState.notes.filter((item) => {
         return item.id !== note.id;
       }),
