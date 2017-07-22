@@ -3,7 +3,6 @@ import uuid from 'uuid';
 import NoteForm from '../note-form';
 import NoteList from '../note-list';
 
-let renderIf = (t, c) => t ? c : undefined;
 
 class NoteItem extends React.Component {
   constructor(props){
@@ -41,10 +40,8 @@ class NoteItem extends React.Component {
     let {app} = this.props;
     console.log(this, 'this.props');
     return(
-      <li
-        className='note-item'>
-        onDoubleClick={() => this.props.app.setState({editing: !state.editing}))}>
-
+      <li>
+        <div className='note-item'>
           <NoteForm
             submitTitle='add note'
             handleSubmit={this.noteCreate}
@@ -59,9 +56,5 @@ class NoteItem extends React.Component {
     );
   }
 }
-
-this.props.app.setState;
-this.props.app.state.edidint;
-
 
 export default NoteItem;

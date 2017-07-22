@@ -14,7 +14,7 @@ class NoteList extends React.Component {
           {this.props.notes.map((item, i) =>
             <li key={i}>
 
-              <h1>{item.title}</h1>
+              <h4>{item.title}</h4>
 
               <button onClick={() => this.props.noteRemove(item)}>
               x
