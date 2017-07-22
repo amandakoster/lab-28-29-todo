@@ -10,7 +10,7 @@ strong { font-weight: bold; }
 
 body {
   background: $color-white;
-  // seting the size of ems on the page
+  // seting the size of em on the page
   font-size: 16px;
 }
 
@@ -24,7 +24,6 @@ blockquote {
     font-size: 9/($i + 2) * 1em;;
   }
 }
-
 
 // form
 label {
@@ -51,7 +50,7 @@ textarea, input {
 button,input[type="submit"] {
   background: $color-lightgrey;
   padding: $pad;
-  border: none;
+  border: none !important;
 
   &:hover {
     background: $color-grey;

@@ -1,6 +1,7 @@
 import React from 'react';
 import NoteItem from '../note-item';
 import NoteForm from '../note-form';
+import './_note-list.scss';
 
 class NoteList extends React.Component {
   constructor(props){
@@ -17,12 +18,12 @@ class NoteList extends React.Component {
               <h4>{item.title}</h4>
 
               <button onClick={() => this.props.noteRemove(item)}>
-              x
+              remove
               </button>
 
               <NoteForm
                 note={item}
-                submitTitle='update note'
+                submitTitle='update'
                 handleSubmit={(note) => {
                   note.id=item.id;
                   this.props.noteUpdate(note);

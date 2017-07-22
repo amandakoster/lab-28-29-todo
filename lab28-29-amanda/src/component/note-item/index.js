@@ -2,6 +2,7 @@ import React from 'react';
 import uuid from 'uuid';
 import NoteForm from '../note-form';
 import NoteList from '../note-list';
+import './_note-item.scss';
 
 
 class NoteItem extends React.Component {
@@ -43,7 +44,7 @@ class NoteItem extends React.Component {
       <li>
         <div className='note-item'>
           <NoteForm
-            submitTitle='add note'
+            submitTitle='add'
             handleSubmit={this.noteCreate}
           />
 
