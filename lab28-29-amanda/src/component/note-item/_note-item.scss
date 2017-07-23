@@ -5,23 +5,17 @@
   margin: 0;
   margin-bottom: $pad;
   padding-bottom: $pad;
-  border-bottom: solid 1px $color-primary;
+  border: dotted 1px $color-primary;
+  width: 50%;
 
   button {
     background: $color-error;
     height: 100%;
+    border: none !important;
     display: inline-block;
     width: 15%;
-    height: 15%;
-  }
-
-  p {
-    height: 100%;
-    display: inline-block;
-    width: calc(40% - 0.5em);
-    padding: $pad;
-    background: $color-secondary;
-    margin-right: $pad;
+    height: 25%;
+    float: right;
   }
 
 }

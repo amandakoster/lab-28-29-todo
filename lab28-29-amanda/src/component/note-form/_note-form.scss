@@ -1,17 +1,23 @@
 @import "../../style/_vars.scss";
 
+
 .note-form {
   input {
     display: inline-block;
     margin-right: $pad;
     width: calc(40% - 0.5em);
-
+    border: $color-lightgrey solid;
   }
 
-    button {
-      display: inline-block;
-      background: $color-success * 0.9 !important;
-      width: 20%
-    }
+  button {
+    display: inline-block;
+    background: $color-success * 0.9 !important;
+    width: 20%;
+    float: right;
+  }
 
+  #{$all-text-inputs} {
+  border: 1px solid green;
+  &:hover, &:focus {
+  }
 }

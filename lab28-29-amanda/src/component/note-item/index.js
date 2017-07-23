@@ -44,6 +44,7 @@ class NoteItem extends React.Component {
       <li>
         <div className='note-item'>
           <NoteForm
+            className='button-add'
             submitTitle='add'
             handleSubmit={this.noteCreate}
           />

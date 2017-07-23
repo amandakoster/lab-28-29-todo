@@ -10,6 +10,11 @@ class NoteForm extends React.Component {
 
     this.handelChange=this.handelChange.bind(this);
     this.handleSubmit=this.handleSubmit.bind(this);
+    this.focus = this.focus.bind(this);
+  }
+
+  focus(){
+    this.textInput.focus();
   }
 
   handelChange(e){
@@ -25,6 +30,7 @@ class NoteForm extends React.Component {
 
   render() {
     return (
+
       <form
         className='note-form'
         onSubmit={this.handleSubmit}>
@@ -34,6 +40,12 @@ class NoteForm extends React.Component {
           type='text'
           value={this.state.title}
           onChange={this.handelChange}
+          ref={(input) => { this.nameInput = input; }}
+
+        />
+
+        <input
+          onChange={this.focus}
         />
 
         <button type='submit'> {this.props.submitTitle} </button>

@@ -7,6 +7,7 @@ import NoteItem from './component/note-item';
 import NoteList from './component/note-list';
 
 
+
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -33,7 +34,6 @@ class App extends React.Component {
       <main className='app'>
         <div>
           <NoteItem app={this.getApp()} />
-          <div className="inputBox"> </div>
         </div>
       </main>
     );

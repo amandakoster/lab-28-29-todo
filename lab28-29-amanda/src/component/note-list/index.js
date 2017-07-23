@@ -17,11 +17,14 @@ class NoteList extends React.Component {
 
               <h4>{item.title}</h4>
 
-              <button onClick={() => this.props.noteRemove(item)}>
-              remove
+              <button
+                className="delete-button"
+                onClick={() => this.props.noteRemove(item)}>
+                remove
               </button>
 
               <NoteForm
+                className="note-form"
                 note={item}
                 submitTitle='update'
                 handleSubmit={(note) => {
