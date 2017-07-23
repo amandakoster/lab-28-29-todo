@@ -1,42 +1,40 @@
-// import './style/main.scss';
 import React from 'react';
 import ReactDom from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
-import NoteDashboard from './component/note-dashboard';
 
+import DashboardContainer from './component/note-dashboard';
 
 class App extends React.Component {
+
   constructor(props){
     super(props);
     this.state = {
-      notes: [],
+      note: [],
     };
 
     this.getApp = this.getApp.bind(this);
   }
 
+
   componentDidUpdate(){
-    console.log('::::STATE::::', this.state);
+    console.log('__STATE__', this.state);
   }
 
   getApp(){
-    return{
+    return {
       state: this.state,
       setState: this.setState.bind(this),
     };
   }
 
   render(){
-    return(
+    return (
       <main className='app'>
-        <BrowserRouter>
 
+        <BrowserRouter>
           <div>
             <Route exact path='/'
-              component={() => <NoteDashboard app={this.getApp()}
-              />
-              }
-            />
+              component={() => <NoteDashboard app={this.getApp()} />} />
           </div>
         </BrowserRouter>
       </main>
@@ -44,4 +42,4 @@ class App extends React.Component {
   }
 }
 
-ReactDom.render(<App title='React Note Form'/>, document.getElementById('root'));
+ReactDom.render(<App title='React Note Form' />, document.getElementById('root'));
