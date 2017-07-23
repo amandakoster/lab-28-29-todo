@@ -16,8 +16,5 @@
     float: right;
   }
 
-  #{$all-text-inputs} {
-  border: 1px solid green;
-  &:hover, &:focus {
-  }
+
 }

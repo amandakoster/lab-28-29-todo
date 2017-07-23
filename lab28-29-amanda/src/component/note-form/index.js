@@ -1,21 +1,15 @@
-import './_note-form.scss';
+
 import React from 'react';
 
 class NoteForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      title: '',
-    };
+    this.state = {title: ''};
 
     this.handelChange=this.handelChange.bind(this);
     this.handleSubmit=this.handleSubmit.bind(this);
-    this.focus = this.focus.bind(this);
   }
 
-  focus(){
-    this.textInput.focus();
-  }
 
   handelChange(e){
     this.setState({
@@ -38,14 +32,9 @@ class NoteForm extends React.Component {
         <input
           name='note'
           type='text'
+          placeholder='your note here'
           value={this.state.title}
           onChange={this.handelChange}
-          ref={(input) => { this.nameInput = input; }}
-
-        />
-
-        <input
-          onChange={this.focus}
         />
 
         <button type='submit'> {this.props.submitTitle} </button>

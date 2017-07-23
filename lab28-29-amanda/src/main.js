@@ -2,10 +2,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
-import NoteForm from './component/note-form';
-import NoteItem from './component/note-item';
-import NoteList from './component/note-list';
-
+import NoteDashboard from './component/note-dashboard';
 
 
 class App extends React.Component {
@@ -32,12 +29,19 @@ class App extends React.Component {
   render(){
     return(
       <main className='app'>
-        <div>
-          <NoteItem app={this.getApp()} />
-        </div>
+        <BrowserRouter>
+
+          <div>
+            <Route exact path='/'
+              component={() => <NoteDashboard app={this.getApp()}
+              />
+              }
+            />
+          </div>
+        </BrowserRouter>
       </main>
     );
   }
 }
 
-ReactDom.render(<App />, document.getElementById('root'));
+ReactDom.render(<App title='React Note Form'/>, document.getElementById('root'));
